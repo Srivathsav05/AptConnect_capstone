@@ -37,34 +37,6 @@ The system allows community admins to manage and create events, communicate impo
 - **Testing:** JUnit, Mockito
 - **Deployment:** Docker (containerized), extendable to cloud platforms
 
-## Setup and Installation
-
-### Prerequisites
-
-Ensure you have the following tools installed:
-- **Node.js** and **npm** (for Angular frontend)
-- **Maven** (for Spring Boot backend)
-- **MySQL** (for database)
-
-### Project Structure
-
-  aptConnect_capstone/
-│
-├── backend/               # Spring Boot backend code
-│   └── src/
-│       └── main/
-│           └── java/com/aptconnect/   # Main Java application code
-│           └── resources/             # Configuration files (application.properties)
-│
-├── frontend/              # Angular frontend code
-│   └── src/
-│       └── app/           # Angular components and services
-│       └── assets/        # Static assets (images, icons, etc.)
-│
-├── README.md              # Project documentation
-├── LICENSE                # License file
-└── .gitignore             # Ignored files in version control
-
 ### API Endpoints (Backend)
 
 Key REST endpoints for backend operations (without external API integrations):
