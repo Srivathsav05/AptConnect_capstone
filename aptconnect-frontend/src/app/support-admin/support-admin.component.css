@@ -1,0 +1,17 @@
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    cursor: pointer;
+  }
+  
+  button.resolved {
+    background-color: green;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

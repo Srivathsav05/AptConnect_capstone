@@ -1,0 +1,155 @@
+/* Hero Section */
+/* Adjust the hero section */
+.hero-section {
+  height: 100vh;
+  background-image: url('/public/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay-content {
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+/* Ensure content doesn't overlap */
+.content-wrapper {
+  padding: 20px;
+}
+
+
+  
+  .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Move the image behind the content */
+  }
+  
+  
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: #ff4b3a;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .feature-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 30%;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card i {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .gallery-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  .auth-buttons {
+    margin-top: 20px;
+  }
+  
+  .auth-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .signup-btn {
+    background-color: #28a745;
+    color: white;
+  }

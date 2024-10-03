@@ -1,0 +1,28 @@
+.app-layout {
+    display: flex;
+    height: 100vh; 
+  }
+  
+   /* #sidebar {
+    width: 60px; 
+    height: 100vh;
+    background-color: #343a40; 
+    transition: width 0.3s;
+    position: fixed;
+  }  */
+  
+  .content-wrapper {
+    flex-grow: 1;
+    padding: 5px;
+    margin-left: 5px; 
+    overflow-y: auto; 
+    height: 100vh;
+    transition: margin-left 0.3s ease;
+  }
+  
+  #sidebar:hover ~ .content-wrapper {
+    margin-left: 100px; 
+  }
+   
+ 
+  

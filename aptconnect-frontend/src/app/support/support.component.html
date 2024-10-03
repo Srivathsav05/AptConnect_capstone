@@ -1,0 +1,72 @@
+<div class="support-container">
+  <div *ngIf="isAdmin; else userForm">
+    <!-- Admin view: Display table -->
+    <table class="support-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone No</th>
+          <th>Email</th>
+          <th>Help Subject</th>
+          <th>Help Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let support of supports">
+          <td>{{ support.id }}</td>
+          <td>{{ support.name }}</td>
+          <td>{{ support.phoneNo }}</td>
+          <td>{{ support.email }}</td>
+          <td>{{ support.helpSubject }}</td>
+          <td>{{ support.helpDescription }}</td>
+          <td>
+            <button
+  class="resolve-btn"
+  [ngClass]="{ 'resolved-btn': support.resolved }"
+  (click)="toggleResolved(support)"
+>
+  {{ support.resolved ? 'Resolved' : 'Mark as Resolved' }}
+</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #userForm>
+    <!-- User view: Display form -->
+    <form [formGroup]="supportForm" (ngSubmit)="submitSupportRequest()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter your name" />
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNo">Phone Number</label>
+        <input type="text" id="phoneNo" formControlName="phoneNo" placeholder="Enter your phone number" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email" />
+      </div>
+
+      <div class="form-group">
+        <label for="helpSubject">Subject</label>
+        <input type="text" id="helpSubject" formControlName="helpSubject" placeholder="Enter the subject" />
+      </div>
+
+      <div class="form-group">
+        <label for="helpDescription">Description</label>
+        <textarea id="helpDescription" formControlName="helpDescription" placeholder="Enter the description"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="loading" class="btn-submit">
+        {{ loading ? 'Sending...' : 'Send' }}
+      </button>
+    </form>
+  </ng-template>
+</div>

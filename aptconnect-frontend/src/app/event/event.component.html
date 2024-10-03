@@ -1,0 +1,69 @@
+<div class="container">
+  <ng-container *ngIf="isAdmin">
+    <h2>{{ isEditing ? 'Edit Event' : 'Create Event' }}</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="submitEvent()" class="event-form">
+      <div class="form-group">
+        <label>Event Title:</label>
+        <input formControlName="title" required />
+        <div *ngIf="eventForm.get('title')?.invalid && eventForm.get('title')?.touched" class="error-message">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Event Description:</label>
+        <textarea formControlName="description" required></textarea>
+        <div *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched" class="error-message">
+          Description is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Location:</label>
+        <input formControlName="location" required />
+        <div *ngIf="eventForm.get('location')?.invalid && eventForm.get('location')?.touched" class="error-message">
+          Location is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Date:</label>
+        <input type="date" formControlName="eventDate" required />
+        <div *ngIf="eventForm.get('eventDate')?.invalid && eventForm.get('eventDate')?.touched" class="error-message">
+          Date is required.
+        </div>
+      </div>
+
+      <button type="submit">{{ isEditing ? 'Update Event' : 'Create Event' }}</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </ng-container>
+
+  <h2>Event Table</h2>
+
+  <table *ngIf="events.length > 0" class="event-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th *ngIf="isAdmin">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.title }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.location }}</td>
+        <td>{{ event.eventDate | date }}</td>
+        <td *ngIf="isAdmin">
+          <button (click)="editEvent(event)">Edit</button>
+          <button (click)="deleteEvent(event.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="loading">Loading events...</div>
+</div>

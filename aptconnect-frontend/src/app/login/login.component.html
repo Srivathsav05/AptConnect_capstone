@@ -1,0 +1,18 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p class="subtext">Please login to your account</p>
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <div class="alt-action">
+        <p>Don't have an account? <a routerLink='/sign-up'>Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</div>

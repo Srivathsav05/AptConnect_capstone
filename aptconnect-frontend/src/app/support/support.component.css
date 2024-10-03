@@ -1,0 +1,138 @@
+:root {
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --background-color: #ffffff;
+  --light-background: #f8f9fa;
+  --text-color: #343a40;
+  --border-color: #ced4da;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+.support-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--transition-speed);
+}
+
+.support-container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+ 
+}
+
+.btn-submit:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.btn-submit:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.support-table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+
+.support-table th,
+.support-table td {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.support-table th {
+  background-color: var(--light-background);
+  font-weight: 600;
+}
+
+.support-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra striping */
+}
+
+.support-table tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Highlight row on hover */
+}
+
+.resolve-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--warning-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  color: var(--text-color);
+  font-weight: 600;
+  display: inline-block;
+  margin: 0;
+  opacity: 1; /* Always visible */
+}
+
+.resolve-btn:hover {
+  background-color: #e0a800; /* Darker warning color on hover */
+}
+
+/* .resolved-btn {
+  background-color: var(--success-color) !important;
+  color: white;
+} */
+
+@media (max-width: 768px) {
+  .support-container {
+    padding: 1rem;
+  }
+
+  .support-table {
+    font-size: 0.9rem;
+  }
+
+  .support-table th,
+  .support-table td {
+    padding: 0.75rem;
+  }
+
+  .btn-submit {
+    padding: 0.5rem;
+  }
+}

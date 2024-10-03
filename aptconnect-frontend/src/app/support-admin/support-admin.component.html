@@ -1,0 +1,32 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone No</th>
+        <th>Email</th>
+        <th>Help Subject</th>
+        <th>Help Description</th>
+        <th>Resolved</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let support of supports">
+        <td>{{ support.id }}</td>
+        <td>{{ support.name }}</td>
+        <td>{{ support.phoneNo }}</td>
+        <td>{{ support.email }}</td>
+        <td>{{ support.helpSubject }}</td>
+        <td>{{ support.helpDescription }}</td>
+        <td>
+          <button
+            [ngClass]="{ resolved: support.resolved }"
+            (click)="toggleResolved(support)"
+          >
+            {{ support.resolved ? 'Resolved' : 'Mark as Resolved' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

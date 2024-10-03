@@ -1,0 +1,68 @@
+<!-- <nav class="nav">
+  <div class="container">
+    <div class="logo">
+      <span>AptConnect</span>
+    </div>
+    <div class="nav-link">
+      <a routerLink='/home' class="nav-item">Home</a>
+      <a routerLink='/event' class="nav-item">Event</a>
+      <a routerLink='/parking' class="nav-item">Parking</a>
+      <a routerLink='/vendor' class="nav-item">Vendor</a>
+      <a routerLink='/support' class="nav-item">Support</a>
+      <a routerLink="/supportAdmin" class="nav-item">support-admin</a>
+     
+    </div>
+    <div class="notification">
+      <i class="fas fa-bell"></i> 
+      <span class="badge"></span> 
+    </div>
+  </div>
+</nav> -->
+<nav id="sidebar" class="bg-dark text-light p-3">
+    
+
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+    <div class="notification text-light" [ngClass]="{'active': isActive('/home')}" [routerLink]="['/home']" style="cursor: pointer;">
+      <!-- Home Icon -->
+      <i class="bi bi-house-door"></i>
+      <span class="notification-text">Home</span> <!-- Notification badge -->
+    </div>
+
+    <div class="notification text-light"  [ngClass]="{'active': isActive('/event')}" [routerLink]="['/event']" style="cursor: pointer;">
+      <!-- Event Icon -->
+      <i class="bi bi-calendar2-event-fill"></i>
+      <span class="notification-text">Event</span> <!-- Notification badge -->
+    </div>
+
+    <div class="notification text-light" [ngClass]="{'active': isActive('/parking')}" [routerLink]="['/parking']" style="cursor: pointer;">
+      <!-- Parking Icon -->
+      <i class="bi bi-p-circle-fill"></i>
+      <span class="notification-text">Parking</span> <!-- Notification badge -->
+    </div>
+
+    
+
+    <div class="notification text-light"  [ngClass]="{'active': isActive('/vendor')}" [routerLink]="['/vendor']" style="cursor: pointer;">
+      <!-- Vendor_Service Icon -->
+      <i class="bi bi-house-gear-fill"></i>
+      <span class="notification-text">Vendor</span> <!-- Notification badge -->
+    </div>
+
+
+    <div class="notification text-light" [ngClass]="{'active': isActive('/support')}" [routerLink]="['/support']" style="cursor: pointer;">
+      <!-- Support Icon -->
+      <i class="bi bi-person-raised-hand"></i>
+      <span class="notification-text">Support</span> <!-- Notification badge -->
+    </div>
+
+    <div class="notification text-light mt-auto mb-3" (click)="logout()" style="cursor: pointer;">
+      <!-- Logout Icon -->
+      <i class="bi bi-box-arrow-right"></i>
+      <span class="notification-text">Logout</span>
+    </div>
+
+
+
+   
+</div>
+</nav>

@@ -1,0 +1,63 @@
+<!-- Vendor Form: Visible only to admin -->
+<form *ngIf="isAdmin" [formGroup]="vendorForm" (ngSubmit)="submitVendor()">
+  <div class="form-group">
+    <label for="vendorName">Vendor Name:</label>
+    <input id="vendorName" formControlName="vendorName" placeholder="Enter vendor name" />
+    <div *ngIf="vendorForm.get('vendorName')?.invalid && vendorForm.get('vendorName')?.touched">
+      <small class="error">Vendor Name is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="vendorEmail">Vendor Email:</label>
+    <input id="vendorEmail" formControlName="vendorEmail" placeholder="Enter vendor email" />
+    <div *ngIf="vendorForm.get('vendorEmail')?.invalid && vendorForm.get('vendorEmail')?.touched">
+      <small class="error">A valid Vendor Email is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="vendorPhone">Vendor Phone:</label>
+    <input id="vendorPhone" formControlName="vendorPhone" placeholder="Enter vendor phone" />
+    <div *ngIf="vendorForm.get('vendorPhone')?.invalid && vendorForm.get('vendorPhone')?.touched">
+      <small class="error">Vendor Phone is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="vendorService">Vendor Service:</label>
+    <input id="vendorService" formControlName="vendorService" placeholder="Enter vendor service" />
+    <div *ngIf="vendorForm.get('vendorService')?.invalid && vendorForm.get('vendorService')?.touched">
+      <small class="error">Vendor Service is required.</small>
+    </div>
+  </div>
+
+  <button type="submit">{{ isEditing ? 'Update Vendor' : 'Create Vendor' }}</button>
+  <button type="button" *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+</form>
+
+
+<!-- Vendor Table: Always visible -->
+<table class="vendor-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Service</th>
+      <th *ngIf="isAdmin">Actions</th> <!-- Show actions only for admin -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vendor of vendors">
+      <td>{{ vendor.vendorName }}</td>
+      <td>{{ vendor.vendorEmail }}</td>
+      <td>{{ vendor.vendorPhone }}</td>
+      <td>{{ vendor.vendorService }}</td>
+      <td *ngIf="isAdmin">
+        <button (click)="editVendor(vendor)">Update</button>
+        <button (click)="deleteVendor(vendor.vendorId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
