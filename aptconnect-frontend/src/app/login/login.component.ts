@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -38,7 +38,7 @@ export class LoginComponent {
           alert(`Welcome, ${userName}!`);
           
           // Navigate to home
-          this.router.navigate(['/event']);
+          this.router.navigate(['/home']);
         },
         error: (err) => {
           console.error('Login failed:', err);

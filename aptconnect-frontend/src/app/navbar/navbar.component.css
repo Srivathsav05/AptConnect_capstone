@@ -1,24 +1,29 @@
 #sidebar {
-  width: 60px; /* Collapsed width */
-  height: 100vh; /* Full viewport height */
-  /* position: absolute; 
-  left: 0; */
-  /* position: fixed; */
+  width: 60px;
+  height: 100vh;
   top: 0;
   left: 0;
-  background-color: #293641; /* Sidebar background color */
+  background-color: #293641;
   color: #fff;
-  transition: width 0.3s; /* Smooth transition for width */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items in a column */
-  align-items: center; /* Center items horizontally */
-  overflow: hidden; /* Hide overflow */
+  transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* position: absolute; */
 }
 
 #sidebar:hover {
-  width: 200px;
-  opacity: 0.9; /* Expanded width */
+  width: 200px; /* Expanded width on hover */
+  opacity: 0.9;
 }
+
+/* .content-wrapper {
+  margin-left: 60px; 
+  transition: margin-left 0.3s;
+} */
+
+
 
 #sidebar .notification {
   margin-top: 20px; /* Space above notification icon */
